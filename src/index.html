@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Чат</title>
+  </head>
+  <body>
+    <div class="login-modal">
+      <form
+        class="login-form"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="login-title"
+      >
+        <h1 id="login-title">Выберите псевдоним</h1>
+        <label class="visually-hidden" for="nickname">Псевдоним</label>
+        <input
+          id="nickname"
+          name="nickname"
+          maxlength="30"
+          required
+          autocomplete="off"
+          autofocus
+        />
+        <p class="login-error" role="alert"></p>
+        <button class="login-button" type="submit">Продолжить</button>
+      </form>
+    </div>
+    <main class="chat" hidden>
+      <aside class="users-panel" aria-label="Участники чата">
+        <ul class="users"></ul>
+      </aside>
+      <section class="chat-panel" aria-label="Сообщения чата">
+        <div class="chat-header">
+          <p class="chat-status" role="status"></p>
+          <button class="exit-button" type="button">Выйти</button>
+        </div>
+        <ul
+          class="messages"
+          role="log"
+          aria-live="polite"
+          aria-label="История сообщений"
+        ></ul>
+        <form class="message-form">
+          <label class="visually-hidden" for="message">Сообщение</label>
+          <input
+            id="message"
+            name="message"
+            placeholder="Введите сообщение"
+            maxlength="2000"
+            required
+            autocomplete="off"
+          />
+          <button class="send-button" type="submit">Отправить</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
